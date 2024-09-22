@@ -14,10 +14,169 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <header></header>
+    <header>
+      <section class="flex justify-center mt-1">
+        <div class="stats border border-primary text-primary-content">
+          <div class="stat flex flex-col gap-2">
+            <div class="stat-title text-primary">Current balance</div>
+            <div class="stat-value text-slate-400"><span id="balance">1000</span> tk</div>
+          </div>
+
+          <div class="stat flex flex-col gap-2">
+            <div class="stat-title text-primary">User</div>
+            <div id="user-name-features" class="stat-value text-pink-600"></div>
+          </div>
+        </div>
+      </section>
+    </header>
+
     <main>
-      
+      <section class="flex flex-col items-center gap-8">
+        <div class="mt-6">
+          <button id="add-money-btn" class="btn btn-primary">Add Money</button>
+          <button id="cash-out-btn" class="btn btn-outline btn-primary">Cash Out</button>
+          <button id="transaction-btn" class="btn btn-outline btn-primary">Transaction</button>
+        </div>
+
+        <div id="add-money-state" class="hero">
+          <div class="hero-content flex-col">
+            <div class="text-center lg:text-left">
+              <h1 class="text-4xl font-bold text-primary">Add Money</h1>
+            </div>
+            <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+              <form class="card-body">
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text text-primary">Amount</span>
+                  </label>
+                  <input
+                    id="add-money-amount"
+                    type="text"
+                    placeholder="Type your amount"
+                    class="input input-bordered"
+                    autocomplete="off"
+                    required
+                  />
+                </div>
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text text-primary">Pin</span>
+                  </label>
+                  <input
+                    id="add-money-pin"
+                    type="password"
+                    placeholder="Type your pin here"
+                    class="input input-bordered"
+                    autocomplete="off"
+                    required
+                  />
+                </div>
+                <div class="form-control mt-6">
+                  <button id="add-money-large-btn" class="btn btn-primary">Add Money</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div id="cash-out-state" class="hero hidden">
+          <div class="hero-content flex-col">
+            <div class="text-center lg:text-left">
+              <h1 class="text-4xl font-bold text-primary">Cash Out</h1>
+            </div>
+            <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+              <form class="card-body">
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text text-primary">Amount</span>
+                  </label>
+                  <input
+                    id="cash-out-amount"
+                    type="text"
+                    placeholder="Type your amount"
+                    class="input input-bordered"
+                    autocomplete="off"
+                    required
+                  />
+                </div>
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text text-primary">Pin</span>
+                  </label>
+                  <input
+                    id="cash-out-pin"
+                    type="password"
+                    placeholder="Type your pin here"
+                    class="input input-bordered"
+                    autocomplete="off"
+                    required
+                  />
+                </div>
+                <div class="form-control mt-6">
+                  <button id="cash-out-large-btn" class="btn btn-primary">Cash Out</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div id="transaction-state" class="hero hidden">
+          <div class="hero-content flex-col">
+            <div class="text-center lg:text-left">
+              <h1 class="text-4xl font-bold text-primary">Transaction History</h1>
+            </div>
+            <div class="card bg-base-100 w-full max-w-sm shrink-0 border border-primary">
+              
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <dialog id="my_modal_2" class="modal">
+          <div class="modal-box">
+            <p class="py-4">Incorrect Credential!</p>
+            <p class="py-4">Your pin number maybe is not correct</p>
+            <p class="py-4">Or, type the amount correctly</p>
+            <div class="modal-action">
+              <form method="dialog">
+                <button class="btn">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+      </section>
+
+
+      <section>
+        <dialog id="my_modal_3" class="modal">
+          <div class="modal-box">
+            <p class="py-4"><span id="addTemp"></span>tk added successfully!</p>
+            <div class="modal-action">
+              <form method="dialog">
+                <button class="btn">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+      </section>
+
+      <section>
+        <dialog id="my_modal_4" class="modal">
+          <div class="modal-box">
+            <p class="py-4"><span id="subtractTemp"></span>tk withdrawn successfully!</p>
+            <div class="modal-action">
+              <form method="dialog">
+                <button class="btn">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+      </section>
     </main>
     <footer></footer>
+
+    <script src="./jsFiles/utilities.js"></script>
+    <script src="./jsFiles/features.js"></script>
   </body>
 </html>

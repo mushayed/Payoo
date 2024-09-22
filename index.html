@@ -40,7 +40,7 @@
                   <input
                     id="user-name"
                     type="text"
-                    placeholder="Type your username"
+                    placeholder="Max of 8 characters"
                     class="input input-bordered"
                     autocomplete="off"
                     required
@@ -71,7 +71,9 @@
       <section>
         <dialog id="my_modal_1" class="modal">
           <div class="modal-box">
-            <p class="py-4">Incorrect Credential. Please try Again!</p>
+            <p class="py-4">Incorrect Credential!</p>
+            <p class="py-4">Username can not be more than 8 characters</p>
+            <p class="py-4">The length of the pin number must be in 4 digits</p>
             <div class="modal-action">
               <form method="dialog">
                 <button class="btn">Close</button>
@@ -83,7 +85,7 @@
     </main>
     <footer></footer>
 
-    <script src="./js folder/utilities.js"></script>
-    <script src="./js folder/login.js"></script>
+    <script src="./jsFiles/utilities.js"></script>
+    <script src="./jsFiles/login.js"></script>
   </body>
 </html>
