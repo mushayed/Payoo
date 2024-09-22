@@ -41,6 +41,21 @@ document.getElementById('add-money-large-btn').addEventListener('click', functio
 
         document.getElementById('add-money-amount').value = '';
         document.getElementById('add-money-pin').value = '';
+
+        // transaction
+        const newDiv = document.createElement('div');
+        const newParagraph = document.createElement('p');
+        newParagraph.classList.add('text-center');
+
+        newParagraph.innerHTML = `${addMoneyAmount}tk <span class="text-pink-600">added</span>. New balance <span class="text-pink-600">${newBalance}tk</span>.`;
+
+        const newHr = document.createElement('hr');
+        newHr.classList.add('border-primary');
+
+        newDiv.appendChild(newParagraph);
+        newDiv.appendChild(newHr);
+
+        document.getElementById('transaction-history').appendChild(newDiv);
     }
     else {
         document.getElementById('my_modal_2').showModal();
@@ -67,6 +82,21 @@ document.getElementById('cash-out-large-btn').addEventListener('click', function
 
         document.getElementById('cash-out-amount').value = '';
         document.getElementById('cash-out-pin').value = '';
+
+        // transaction
+        const newDiv = document.createElement('div');
+        const newParagraph = document.createElement('p');
+        newParagraph.classList.add('text-center');
+
+        newParagraph.innerHTML = `${cashOutAmount}tk <span class="text-pink-600">withdrawn</span>. New balance <span class="text-pink-600">${newBalance}tk</span>.`;
+
+        const newHr = document.createElement('hr');
+        newHr.classList.add('border-primary');
+
+        newDiv.appendChild(newParagraph);
+        newDiv.appendChild(newHr);
+
+        document.getElementById('transaction-history').appendChild(newDiv);
     }
     else {
         document.getElementById('my_modal_2').showModal();
